@@ -34,6 +34,7 @@ public class Order extends Menu {
                     orderItems.add(new Dish(name, price, description));
                     System.out.print("Enter quantity for " + name + ": ");
                     int quantity = scanner.nextInt();
+                    scanner.nextLine();
                     quantities.add(quantity);
                     prices.add(price);
                     itemFound = true;
@@ -46,8 +47,7 @@ public class Order extends Menu {
         }
 
         calculateTotal();
-        scanner.nextLine(); // Consume the remaining newline
-        scanner.close();
+        // scanner.close();
     }
 
     private void calculateTotal() {
